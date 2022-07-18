@@ -1,9 +1,10 @@
 import React, { useReducer, useRef } from "react";
 import { addJob, deleteJob, setJob } from "./actions";
+import logger from "./logger";
 import reducer, { initState } from "./reducer";
 
 export default function Todo() {
-  const [state, dispatch] = useReducer(reducer, initState);
+  const [state, dispatch] = useReducer(logger(reducer), initState);
 
   const { job, jobs } = state;
 
