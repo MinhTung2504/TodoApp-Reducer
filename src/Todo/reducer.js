@@ -1,5 +1,9 @@
-const { SET_JOB, ADD_JOB, DELETE_JOB } = require("./actions/actions");
+import { ADD_JOB, DELETE_JOB, SET_JOB } from "./constants";
 
+export const initState = {
+  job: "",
+  jobs: [],
+};
 // 3. Reducer
 const reducer = (state, action) => {
   console.log("Action: ", action);
@@ -38,6 +42,4 @@ const reducer = (state, action) => {
   return newState;
 };
 
-module.exports = {
-  reducer,
-};
+export default reducer;
